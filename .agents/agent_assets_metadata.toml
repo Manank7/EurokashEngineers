@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "2MmT84ayMFAHJXYqe_b-5"
+uri = "file://artifacts/eurokash/public/images/hero.png"
+type = "image"
+title = "industrial control room hero"
+
+[[generated]]
+id = "XaYkE0zJIwdkmHrTCb6j0"
+uri = "file://artifacts/eurokash/public/images/products.png"
+type = "image"
+title = "industrial equipment pumps"
+
+[[generated]]
+id = "kDTZb94pJ8CQDNWu6gmyG"
+uri = "file://artifacts/eurokash/public/images/services.png"
+type = "image"
+title = "engineers consulting blueprint"
