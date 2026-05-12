@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pnpm --filter @workspace/eurokash run build",
+  "outputDirectory": "artifacts/eurokash/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
