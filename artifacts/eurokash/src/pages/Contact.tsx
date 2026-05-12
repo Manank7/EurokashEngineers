@@ -10,17 +10,30 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
+
+    const form = e.target as HTMLFormElement;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const company = (form.elements.namedItem("company") as HTMLInputElement).value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const interest = (form.elements.namedItem("interest") as HTMLSelectElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+
+    const subject = encodeURIComponent(`Inquiry from ${name} — ${interest}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nOrganization: ${company}\nEmail: ${email}\nArea of Interest: ${interest}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:info@eurokash.com?subject=${subject}&body=${body}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       toast({
-        title: "Inquiry Received",
-        description: "Your message has been routed to our technical team. We will contact you shortly.",
+        title: "Inquiry Ready",
+        description: "Your email client has been opened with the inquiry pre-filled. Please send the email to complete your submission.",
         variant: "default",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      form.reset();
+    }, 1000);
   };
 
   return (
@@ -141,10 +154,11 @@ export default function Contact() {
                       <select 
                         id="interest"
                         required
+                        defaultValue=""
                         className="w-full bg-background border border-primary/20 p-3 text-foreground font-mono text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all appearance-none"
                         data-testid="select-interest"
                       >
-                        <option value="" disabled selected>SELECT AREA...</option>
+                        <option value="" disabled>SELECT AREA...</option>
                         <option value="equipment">Equipment Sourcing</option>
                         <option value="modernization">Plant Modernization</option>
                         <option value="consultancy">Project Consultancy</option>
