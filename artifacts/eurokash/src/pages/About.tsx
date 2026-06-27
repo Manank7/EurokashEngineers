@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { CheckCircle2, Factory, Network, Target, Users } from "lucide-react";
+import { CheckCircle2, Factory, Network, Target, Users, Phone } from "lucide-react";
 
 export default function About() {
   return (
@@ -14,12 +14,12 @@ export default function About() {
             <h2 className="text-3xl font-display font-bold uppercase mb-6">
               Premier Industrial Equipment Distributor
             </h2>
-            <div className="space-y-4 text-foreground/80 font-sans leading-relaxed text-lg">
+            <div className="space-y-4 text-foreground/80 font-sans leading-relaxed text-lg text-justify">
               <p>
                 Eurokash Engineers & Consultants is a premier trading house and industrial equipment distributor, specializing in the sourcing and supply of high-quality machinery and spare parts for diverse industries.
               </p>
               <p>
-                For over 30 years, we have provided trusted solutions to the Steel, Power, Petrochemical, Refinery, Mining, Nuclear, Defence and Heavy Engineering sectors.
+                For over 35 years, we have provided trusted solutions to the Steel, Power, Petrochemical, Refinery, Mining, Nuclear, Defence and Heavy Engineering sectors.
               </p>
               <p>
                 With a vast global network of suppliers, including key manufacturers from CIS countries (former USSR), Germany, Italy and Poland, Eurokash is committed to delivering top-tier industrial solutions that enhance productivity and efficiency.
@@ -35,6 +35,13 @@ export default function About() {
                 <div className="text-xs font-mono text-primary tracking-widest uppercase mb-1">Industry Focus</div>
                 <div className="font-bold">Distribution & Consultancy</div>
               </div>
+            </div>
+
+            <div className="mt-6 flex items-center gap-3 text-primary font-mono text-sm">
+              <Phone className="w-4 h-4 shrink-0" />
+              <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-about-phone">
+                +91 98113 39188
+              </a>
             </div>
           </FadeIn>
 
@@ -66,7 +73,7 @@ export default function About() {
               {
                 icon: Factory,
                 title: "Industry Expertise",
-                desc: "Over 30 years of experience in industrial equipment sourcing, project consultancy, and modernization."
+                desc: "Over 35 years of experience in industrial equipment sourcing, project consultancy, and modernization."
               },
               {
                 icon: Network,
@@ -93,7 +100,7 @@ export default function About() {
                 <div className="bg-card border border-primary/10 p-6 h-full hover:border-primary/40 transition-colors">
                   <feature.icon className="w-10 h-10 text-primary mb-4" strokeWidth={1.5} />
                   <h3 className="font-display text-xl font-bold uppercase mb-3">{feature.title}</h3>
-                  <p className="text-foreground/70 text-sm leading-relaxed">{feature.desc}</p>
+                  <p className="text-foreground/70 text-sm leading-relaxed text-justify">{feature.desc}</p>
                 </div>
               </FadeIn>
             ))}

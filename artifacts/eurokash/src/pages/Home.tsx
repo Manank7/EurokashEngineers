@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings, Hexagon } from "lucide-react";
+import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings, Hexagon, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/layout/PageTransition";
 
@@ -17,8 +17,6 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,hsl(var(--background))_100%)] opacity-70" />
-          
-          {/* Tech overlay grid */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwem0yMCAyMGgyMHYyMEgyMHoiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9InJnYmEoMCwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==')] opacity-50" />
         </div>
 
@@ -52,11 +50,22 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg md:text-2xl text-foreground/80 max-w-2xl mb-10 font-light leading-relaxed"
+              className="text-lg md:text-2xl text-foreground/80 max-w-2xl mb-6 font-light leading-relaxed text-justify"
             >
               Innovating Industrial Solutions, Empowering Global Projects. 
               The trusted engineering command center for steel, power, and nuclear sectors.
             </motion.p>
+
+            <motion.a
+              href="tel:+919811339188"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="inline-flex items-center gap-2 text-primary font-mono text-sm tracking-widest mb-8 hover:text-white transition-colors"
+              data-testid="link-hero-phone"
+            >
+              <Phone className="w-4 h-4" /> +91 98113 39188
+            </motion.a>
             
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -91,13 +100,13 @@ export default function Home() {
           className="absolute bottom-10 right-10 hidden lg:flex gap-8 bg-card/80 backdrop-blur-md border border-primary/20 p-6"
         >
           <div>
-            <div className="font-display text-4xl font-bold text-primary">30+</div>
+            <div className="font-display text-4xl font-bold text-primary">35+</div>
             <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Years Exp.</div>
           </div>
           <div className="w-[1px] bg-primary/20" />
           <div>
-            <div className="font-display text-4xl font-bold text-primary">7</div>
-            <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Regional Offices</div>
+            <div className="font-display text-4xl font-bold text-primary">10</div>
+            <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Cities</div>
           </div>
         </motion.div>
       </section>
@@ -114,7 +123,6 @@ export default function Home() {
                   alt="Industrial Equipment" 
                   className="w-full h-auto relative z-10 border border-primary/30 shadow-2xl"
                 />
-                {/* Tech readouts overlay */}
                 <div className="absolute bottom-4 left-4 z-20 bg-background/90 backdrop-blur-sm border border-primary/30 p-3 font-mono text-[10px] text-primary">
                   <div className="flex items-center gap-2"><Activity className="w-3 h-3"/> SYS.STATUS: NOMINAL</div>
                   <div className="flex items-center gap-2 mt-1"><Settings className="w-3 h-3"/> PRESSURE: OPTIMAL</div>
@@ -126,7 +134,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-display font-bold uppercase mb-6">
                 Engineered for <span className="text-primary">Scale</span>
               </h2>
-              <p className="text-foreground/70 text-lg mb-8 leading-relaxed">
+              <p className="text-foreground/70 text-lg mb-8 leading-relaxed text-justify">
                 Eurokash Engineers & Consultants is a premier trading house and industrial equipment distributor. 
                 We specialize in sourcing and supplying high-quality machinery for the Steel, Power, Petrochemical, 
                 Refinery, Mining, Nuclear, and Defence sectors.
@@ -191,11 +199,10 @@ export default function Home() {
                   <div className="bg-card border border-primary/10 p-8 h-full transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
                     <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors" strokeWidth={1} />
                     <h3 className="font-display text-2xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors">{card.title}</h3>
-                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans">{card.desc}</p>
+                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify">{card.desc}</p>
                     <div className="mt-auto flex items-center text-primary font-mono text-xs tracking-widest uppercase">
                       Explore <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </div>
-                    {/* Hover effect background */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   </div>
                 </Link>
@@ -212,16 +219,21 @@ export default function Home() {
           <FadeIn>
             <Hexagon className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1} />
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase mb-6">Initiate Project</h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto mb-10">
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto mb-6 text-justify mx-auto">
               Engage our technical consultancy team to discuss feasibility, sourcing, or modernization of your industrial facility.
             </p>
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center gap-3 bg-primary text-background px-10 py-5 font-mono font-bold tracking-widest uppercase hover:bg-white transition-all shadow-[0_0_30px_-5px_rgba(0,255,255,0.4)]"
-              data-testid="link-home-cta"
-            >
-              Contact Command Center
-            </Link>
+            <a href="tel:+919811339188" className="inline-flex items-center gap-2 text-primary font-mono tracking-widest mb-8 hover:text-white transition-colors">
+              <Phone className="w-5 h-5" /> +91 98113 39188
+            </a>
+            <div>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center gap-3 bg-primary text-background px-10 py-5 font-mono font-bold tracking-widest uppercase hover:bg-white transition-all shadow-[0_0_30px_-5px_rgba(0,255,255,0.4)]"
+                data-testid="link-home-cta"
+              >
+                Contact Command Center
+              </Link>
+            </div>
           </FadeIn>
         </div>
       </section>
