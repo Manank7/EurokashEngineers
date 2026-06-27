@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { MapPin } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 
 export default function Clients() {
   const clients = [
@@ -8,12 +8,13 @@ export default function Clients() {
     "National Thermal Power Corporation Ltd. (NTPC) — Kahalgaon, Vindhyachal, Sipat, Barh Power Plants",
     "Indian Oil Corporation Ltd. (IOCL)",
     "Gas Authority of India Ltd. (GAIL)",
+    "Bharat Heavy Electricals Limited (BHEL)",
     "Tata Consultancy Ltd.",
     "Larsen & Toubro (L&T)",
     "Jindal Steel & Power Ltd.",
     "Engineers India Ltd. (EIL)",
-    "Nuclear Fuel Corporation of India Ltd. (NPCIL)",
-    "H हिंदुस्तान Shipyard Ltd."
+    "Nuclear Power Corporation of India Ltd. (NPCIL)",
+    "Hindustan Shipyard Ltd."
   ];
 
   const offices = [
@@ -24,6 +25,9 @@ export default function Clients() {
     { city: "Visakhapatnam", type: "Regional Office", desc: "Covering Hyderabad and southern port projects." },
     { city: "Bhopal", type: "Regional Office", desc: "Central India heavy engineering support." },
     { city: "Kudan Kulam", type: "Regional Office", desc: "Nuclear power sector operations." },
+    { city: "Kolkata", type: "Regional Office", desc: "Eastern India industrial and port operations." },
+    { city: "Jamshedpur", type: "Regional Office", desc: "Steel belt operations and heavy industry support." },
+    { city: "Chennai", type: "Regional Office", desc: "Southern India manufacturing and defence sector." },
   ];
 
   return (
@@ -31,13 +35,13 @@ export default function Clients() {
       <PageHeader title="Clientele & Presence" subtitle="Trusted Nationwide" />
 
       <div className="container mx-auto px-4">
-        
+
         {/* Clients Section */}
         <section className="mb-24">
           <FadeIn>
             <div className="max-w-3xl mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Prestigious Clientele</h2>
-              <p className="text-foreground/70 text-lg">
+              <p className="text-foreground/70 text-lg text-justify">
                 For over three decades, Eurokash has been the trusted partner for India's most critical industrial infrastructure, commanding respect across the public and private sectors.
               </p>
             </div>
@@ -53,6 +57,15 @@ export default function Clients() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={0.3}>
+            <div className="mt-8 flex items-center gap-3 text-primary font-mono text-sm">
+              <Phone className="w-4 h-4 shrink-0" />
+              <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-clients-phone">
+                +91 98113 39188
+              </a>
+            </div>
+          </FadeIn>
         </section>
 
         {/* Global Presence Section */}
@@ -60,15 +73,15 @@ export default function Clients() {
           <FadeIn>
             <div className="border-t border-primary/20 pt-16 mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Global Presence, Local Expertise</h2>
-              <p className="text-foreground/70 text-lg max-w-2xl">
-                Eurokash operates a network of regional offices strategically located across India's industrial belt, ensuring rapid response and on-ground technical support.
+              <p className="text-foreground/70 text-lg max-w-3xl text-justify">
+                Eurokash is headquartered in New Delhi with regional representatives strategically located across India's major industrial centres, ensuring prompt local support and nation wide service and delivery.
               </p>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {offices.map((office, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
+              <FadeIn key={i} delay={i * 0.07}>
                 <div className={`p-6 border ${office.type === 'Head Office' ? 'border-primary bg-primary/5' : 'border-foreground/10 bg-card'} h-full relative`}>
                   {office.type === 'Head Office' && (
                     <div className="absolute top-0 right-0 bg-primary text-background text-[10px] font-mono font-bold px-2 py-1 uppercase tracking-widest">

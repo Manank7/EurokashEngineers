@@ -79,8 +79,10 @@ export default function Contact() {
                   <div className="flex items-start gap-4">
                     <Phone className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
                     <div>
-                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Secure Line</h4>
-                      <p className="text-foreground/80 text-sm italic opacity-70">(Contact number provided upon request)</p>
+                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Phone</h4>
+                      <a href="tel:+919811339188" className="text-foreground/80 hover:text-primary transition-colors font-mono" data-testid="link-contact-phone">
+                        +91 98113 39188
+                      </a>
                     </div>
                   </div>
                 </div>

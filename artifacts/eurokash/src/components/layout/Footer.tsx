@@ -67,7 +67,7 @@ export function Footer() {
             </h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
-                "Bhilai", "Bokaro", "Rourkela", "Visakhapatnam", "Bhopal", "Kudan Kulam"
+                "Bhilai", "Bokaro", "Rourkela", "Visakhapatnam", "Bhopal", "Kudan Kulam", "Kolkata", "Jamshedpur", "Chennai"
               ].map((office) => (
                 <li key={office} className="text-sm text-foreground/60 flex items-center gap-2">
                   <span className="text-primary/50 text-xs">/</span> {office}
@@ -88,7 +88,9 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/70">
                 <Phone className="w-5 h-5 text-primary shrink-0" strokeWidth={1.5} />
-                <span>+91 (Contact required)</span>
+                <a href="tel:+919811339188" className="hover:text-primary transition-colors" data-testid="link-footer-phone">
+                  +91 98113 39188
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" strokeWidth={1.5} />

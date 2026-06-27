@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { FileText, Wrench, Globe, ArrowRight } from "lucide-react";
+import { FileText, Wrench, Globe, ArrowRight, Phone } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Services() {
@@ -11,9 +11,15 @@ export default function Services() {
       <div className="container mx-auto px-4">
         {/* Intro */}
         <FadeIn className="max-w-3xl mb-16">
-          <p className="text-xl text-foreground/80 leading-relaxed">
+          <p className="text-xl text-foreground/80 leading-relaxed text-justify">
             Beyond procurement, Eurokash provides specialized consultancy, tender management, and modernization services to ensure legacy industrial plants remain competitive and efficient.
           </p>
+          <div className="mt-4 flex items-center gap-3 text-primary font-mono text-sm">
+            <Phone className="w-4 h-4 shrink-0" />
+            <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-services-phone">
+              +91 98113 39188
+            </a>
+          </div>
         </FadeIn>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
@@ -28,7 +34,7 @@ export default function Services() {
                   <FileText className="w-8 h-8 text-primary" />
                   <h2 className="text-2xl font-display font-bold uppercase tracking-wide">Project Consultancy & Liaison</h2>
                 </div>
-                <p className="text-foreground/80 mb-6">
+                <p className="text-foreground/80 mb-6 text-justify">
                   Eurokash's consultancy division has an established track record in executing industrial projects across India. We specialize in the Stone Industry, with successful projects in Marble and Granite sectors in Rajasthan.
                 </p>
                 <ul className="space-y-3 font-mono text-sm">
@@ -60,7 +66,7 @@ export default function Services() {
                   <Wrench className="w-8 h-8 text-primary" />
                   <h2 className="text-2xl font-display font-bold uppercase tracking-wide">Equipment & Modernization</h2>
                 </div>
-                <p className="text-foreground/80 mb-6">
+                <p className="text-foreground/80 mb-6 text-justify">
                   We are renowned for providing a wide range of industrial equipment and spare parts from trusted global sources.
                 </p>
                 <ul className="space-y-4 font-mono text-sm">
@@ -92,13 +98,16 @@ export default function Services() {
             </div>
             <div>
               <h2 className="text-2xl md:text-3xl font-display font-bold uppercase tracking-wide mb-4">Global Tender Management</h2>
-              <p className="text-foreground/80 text-lg leading-relaxed">
+              <p className="text-foreground/80 text-lg leading-relaxed text-justify">
                 Managing the complexities of international tenders, including participation in global tenders for industrial projects and equipment. We ensure compliance with both private sector and government tenders, providing competitive solutions tailored to client specifications.
               </p>
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap gap-4 items-center">
                 <Link href="/contact" className="inline-block border border-primary text-primary px-6 py-2 font-mono text-sm tracking-widest uppercase hover:bg-primary hover:text-background transition-colors">
                   Request Consultation
                 </Link>
+                <a href="tel:+919811339188" className="inline-flex items-center gap-2 text-primary font-mono text-sm tracking-widest hover:text-white transition-colors">
+                  <Phone className="w-4 h-4" /> +91 98113 39188
+                </a>
               </div>
             </div>
           </div>
