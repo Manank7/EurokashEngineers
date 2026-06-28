@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { FileText, Wrench, Globe, ArrowRight, Phone } from "lucide-react";
+import { FileText, Wrench, Globe, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Services() {
@@ -14,12 +14,6 @@ export default function Services() {
           <p className="text-xl text-foreground/80 leading-relaxed text-justify">
             Beyond procurement, Eurokash provides specialized consultancy, tender management, and modernization services to ensure legacy industrial plants remain competitive and efficient.
           </p>
-          <div className="mt-4 flex items-center gap-3 text-primary font-mono text-sm">
-            <Phone className="w-4 h-4 shrink-0" />
-            <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-services-phone">
-              +91 98113 39188
-            </a>
-          </div>
         </FadeIn>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-24">
@@ -105,9 +99,6 @@ export default function Services() {
                 <Link href="/contact" className="inline-block border border-primary text-primary px-6 py-2 font-mono text-sm tracking-widest uppercase hover:bg-primary hover:text-background transition-colors">
                   Request Consultation
                 </Link>
-                <a href="tel:+919811339188" className="inline-flex items-center gap-2 text-primary font-mono text-sm tracking-widest hover:text-white transition-colors">
-                  <Phone className="w-4 h-4" /> +91 98113 39188
-                </a>
               </div>
             </div>
           </div>

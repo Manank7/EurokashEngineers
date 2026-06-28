@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function Clients() {
   const clients = [
@@ -57,15 +57,6 @@ export default function Clients() {
               </FadeIn>
             ))}
           </div>
-
-          <FadeIn delay={0.3}>
-            <div className="mt-8 flex items-center gap-3 text-primary font-mono text-sm">
-              <Phone className="w-4 h-4 shrink-0" />
-              <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-clients-phone">
-                +91 98113 39188
-              </a>
-            </div>
-          </FadeIn>
         </section>
 
         {/* Global Presence Section */}

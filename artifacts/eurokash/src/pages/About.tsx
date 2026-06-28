@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { CheckCircle2, Factory, Network, Target, Users, Phone } from "lucide-react";
+import { CheckCircle2, Factory, Network, Target, Users } from "lucide-react";
 
 export default function About() {
   return (
@@ -37,12 +37,6 @@ export default function About() {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center gap-3 text-primary font-mono text-sm">
-              <Phone className="w-4 h-4 shrink-0" />
-              <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-about-phone">
-                +91 98113 39188
-              </a>
-            </div>
           </FadeIn>
 
           <FadeIn delay={0.2}>
