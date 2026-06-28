@@ -7,7 +7,7 @@ export default function About() {
     <PageTransition>
       <PageHeader title="Our Legacy" subtitle="Established 1989" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Intro Section */}
         <section className="grid lg:grid-cols-2 gap-16 mb-24 items-center">
           <FadeIn>
@@ -36,7 +36,6 @@ export default function About() {
                 <div className="font-bold">Distribution & Consultancy</div>
               </div>
             </div>
-
           </FadeIn>
 
           <FadeIn delay={0.2}>

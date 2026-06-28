@@ -34,7 +34,7 @@ export default function Clients() {
     <PageTransition>
       <PageHeader title="Clientele & Presence" subtitle="Trusted Nationwide" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
 
         {/* Clients Section */}
         <section className="mb-24">

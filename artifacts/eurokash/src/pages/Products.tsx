@@ -42,7 +42,7 @@ export default function Products() {
     <PageTransition>
       <PageHeader title="Products & Sourcing" subtitle="Precision Engineering Supply" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
 
         {/* Banner Image */}
         <FadeIn className="mb-20">
