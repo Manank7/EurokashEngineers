@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings, Hexagon, Phone } from "lucide-react";
+import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings, Hexagon } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/layout/PageTransition";
 
@@ -56,17 +56,6 @@ export default function Home() {
               The trusted engineering command center for steel, power, and nuclear sectors.
             </motion.p>
 
-            <motion.a
-              href="tel:+919811339188"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="inline-flex items-center gap-2 text-primary font-mono text-sm tracking-widest mb-8 hover:text-white transition-colors"
-              data-testid="link-hero-phone"
-            >
-              <Phone className="w-4 h-4" /> +91 98113 39188
-            </motion.a>
-            
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -222,9 +211,6 @@ export default function Home() {
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto mb-6 text-justify mx-auto">
               Engage our technical consultancy team to discuss feasibility, sourcing, or modernization of your industrial facility.
             </p>
-            <a href="tel:+919811339188" className="inline-flex items-center gap-2 text-primary font-mono tracking-widest mb-8 hover:text-white transition-colors">
-              <Phone className="w-5 h-5" /> +91 98113 39188
-            </a>
             <div>
               <Link 
                 href="/contact" 

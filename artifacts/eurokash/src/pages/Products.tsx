@@ -1,7 +1,7 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
 import { Link } from "wouter";
-import { Cog, Droplets, Zap, Wind, Phone } from "lucide-react";
+import { Cog, Droplets, Zap, Wind } from "lucide-react";
 
 export default function Products() {
   const mechanicalCategories = [
@@ -43,16 +43,6 @@ export default function Products() {
       <PageHeader title="Products & Sourcing" subtitle="Precision Engineering Supply" />
 
       <div className="container mx-auto px-4">
-
-        {/* Contact Strip */}
-        <FadeIn className="mb-10">
-          <div className="flex items-center gap-3 text-primary font-mono text-sm">
-            <Phone className="w-4 h-4 shrink-0" />
-            <a href="tel:+919811339188" className="hover:text-white transition-colors tracking-widest" data-testid="link-products-phone">
-              +91 98113 39188
-            </a>
-          </div>
-        </FadeIn>
 
         {/* Banner Image */}
         <FadeIn className="mb-20">
@@ -128,9 +118,6 @@ export default function Products() {
                 <Link href="/contact" className="inline-block bg-amber-600 text-background px-6 py-3 font-mono text-sm tracking-widest uppercase font-bold hover:bg-amber-400 transition-colors">
                   Inquire about specific parts
                 </Link>
-                <a href="tel:+919811339188" className="inline-flex items-center gap-2 text-amber-400 font-mono text-sm tracking-widest hover:text-white transition-colors">
-                  <Phone className="w-4 h-4" /> +91 98113 39188
-                </a>
               </div>
             </div>
           </FadeIn>
