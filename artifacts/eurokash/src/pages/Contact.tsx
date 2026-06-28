@@ -40,9 +40,9 @@ export default function Contact() {
     <PageTransition>
       <PageHeader title="Command Center" subtitle="Initiate Contact" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-24 mb-20">
-          
+
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-10">
             <FadeIn>
@@ -57,7 +57,7 @@ export default function Contact() {
                       <p className="text-sm text-foreground/60 mt-1">Established 1989</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <MapPin className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
                     <div>
@@ -106,10 +106,9 @@ export default function Contact() {
           <div className="lg:col-span-3">
             <FadeIn delay={0.1}>
               <div className="bg-card border border-primary/30 p-8 md:p-12 relative overflow-hidden">
-                {/* Tech corner accents */}
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary" />
-                
+
                 <h2 className="text-3xl font-display font-bold uppercase mb-2">Submit Inquiry</h2>
                 <p className="text-foreground/60 text-sm mb-8 font-mono">ALL FIELDS ARE REQUIRED FOR PROCESSING.</p>
 
@@ -117,9 +116,9 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-xs font-mono text-primary uppercase tracking-widest">Full Name / Designation</label>
-                      <input 
-                        type="text" 
-                        id="name" 
+                      <input
+                        type="text"
+                        id="name"
                         required
                         className="w-full bg-background border border-primary/20 p-3 text-foreground font-mono text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                         placeholder="ENTER NAME"
@@ -128,9 +127,9 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="company" className="text-xs font-mono text-primary uppercase tracking-widest">Organization</label>
-                      <input 
-                        type="text" 
-                        id="company" 
+                      <input
+                        type="text"
+                        id="company"
                         required
                         className="w-full bg-background border border-primary/20 p-3 text-foreground font-mono text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                         placeholder="ENTER COMPANY"
@@ -142,9 +141,9 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-xs font-mono text-primary uppercase tracking-widest">Email Address</label>
-                      <input 
-                        type="email" 
-                        id="email" 
+                      <input
+                        type="email"
+                        id="email"
                         required
                         className="w-full bg-background border border-primary/20 p-3 text-foreground font-mono text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                         placeholder="ENTER EMAIL"
@@ -153,7 +152,7 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="interest" className="text-xs font-mono text-primary uppercase tracking-widest">Area of Interest</label>
-                      <select 
+                      <select
                         id="interest"
                         required
                         defaultValue=""
@@ -171,8 +170,8 @@ export default function Contact() {
 
                   <div className="space-y-2">
                     <label htmlFor="message" className="text-xs font-mono text-primary uppercase tracking-widest">Message / Specification</label>
-                    <textarea 
-                      id="message" 
+                    <textarea
+                      id="message"
                       rows={5}
                       required
                       className="w-full bg-background border border-primary/20 p-3 text-foreground font-sans text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none"
@@ -181,8 +180,8 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-primary text-background py-4 font-mono font-bold tracking-widest uppercase hover:bg-white transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                     data-testid="button-submit-inquiry"

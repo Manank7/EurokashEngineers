@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg0MHY0MEgwem0yMCAyMGgyMHYyMEgyMHoiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9InJnYmEoMCwyNTUsMjU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==')] opacity-50" />
         </div>
 
-        <div className="container relative z-10 px-4 pt-20">
+        <div className="container mx-auto relative z-10 px-4 md:px-6 pt-20">
           <div className="max-w-4xl">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,7 @@ export default function Home() {
 
       {/* OVERVIEW SECTION */}
       <section className="py-24 bg-card relative">
-        <div className="container px-4">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <div className="relative">
@@ -157,7 +157,7 @@ export default function Home() {
 
       {/* CORE OFFERINGS MATRIX */}
       <section className="py-24 bg-background relative overflow-hidden">
-        <div className="container px-4 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-5xl font-display font-bold uppercase mb-4">Core Offerings</h2>
@@ -204,7 +204,7 @@ export default function Home() {
       {/* CTA SECTION */}
       <section className="py-24 relative border-t border-primary/20 bg-card overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/hero.png')] opacity-10 bg-cover bg-center mix-blend-overlay" />
-        <div className="container px-4 relative z-10 text-center">
+        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <FadeIn>
             <Hexagon className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1} />
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase mb-6">Initiate Project</h2>

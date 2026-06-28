@@ -8,7 +8,7 @@ export default function Services() {
     <PageTransition>
       <PageHeader title="Our Services" subtitle="Consultancy & Modernization" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-6">
         {/* Intro */}
         <FadeIn className="max-w-3xl mb-16">
           <p className="text-xl text-foreground/80 leading-relaxed text-justify">
