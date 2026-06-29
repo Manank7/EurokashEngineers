@@ -19,15 +19,15 @@ export default function Clients() {
 
   const offices = [
     { city: "New Delhi", type: "Head Office", desc: "Central operations and strategic management." },
-    { city: "Bhilai", type: "Regional Office", desc: "Serving the local steel industry hub." },
-    { city: "Bokaro", type: "Regional Office", desc: "Covering Kolkata, Durgapur & Ranchi." },
-    { city: "Rourkela", type: "Regional Office", desc: "Dedicated support for local infrastructure." },
-    { city: "Visakhapatnam", type: "Regional Office", desc: "Covering Hyderabad and southern port projects." },
-    { city: "Bhopal", type: "Regional Office", desc: "Central India heavy engineering support." },
-    { city: "Kudan Kulam", type: "Regional Office", desc: "Nuclear power sector operations." },
-    { city: "Kolkata", type: "Regional Office", desc: "Eastern India industrial and port operations." },
-    { city: "Jamshedpur", type: "Regional Office", desc: "Steel belt operations and heavy industry support." },
-    { city: "Chennai", type: "Regional Office", desc: "Southern India manufacturing and defence sector." },
+    { city: "Bhilai", type: "Regional Representative", desc: "Serving the local steel industry hub." },
+    { city: "Bokaro", type: "Regional Representative", desc: "Covering Kolkata, Durgapur & Ranchi." },
+    { city: "Rourkela", type: "Regional Representative", desc: "Dedicated support for local infrastructure." },
+    { city: "Visakhapatnam", type: "Regional Representative", desc: "Covering Hyderabad and southern port projects." },
+    { city: "Bhopal", type: "Regional Representative", desc: "Central India heavy engineering support." },
+    { city: "Kudan Kulam", type: "Regional Representative", desc: "Nuclear power sector operations." },
+    { city: "Kolkata", type: "Regional Representative", desc: "Eastern India industrial and port operations." },
+    { city: "Jamshedpur", type: "Regional Representative", desc: "Steel belt operations and heavy industry support." },
+    { city: "Chennai", type: "Regional Representative", desc: "Southern India manufacturing and defence sector." },
   ];
 
   return (
