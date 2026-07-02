@@ -1,6 +1,6 @@
 import React from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { CheckCircle2, Factory, Network, Target, Users } from "lucide-react";
+import { CheckCircle2, Factory, Network, Target, Users, Award } from "lucide-react";
 
 export default function About() {
   return (
@@ -35,6 +35,10 @@ export default function About() {
                 <div className="text-xs font-mono text-primary tracking-widest uppercase mb-1">Industry Focus</div>
                 <div className="font-bold">Distribution & Consultancy</div>
               </div>
+              <div className="col-span-2 mt-2">
+                <div className="text-xs font-mono text-primary tracking-widest uppercase mb-1">Certifications</div>
+                <div className="font-bold font-mono text-sm">ISO 9001:2015 &nbsp;|&nbsp; ISO 14001:2015</div>
+              </div>
             </div>
           </FadeIn>
 
@@ -50,6 +54,23 @@ export default function About() {
             </div>
           </FadeIn>
         </section>
+
+        {/* Stats Strip */}
+        <FadeIn>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border border-primary/20 mb-24">
+            {[
+              { value: "35+", label: "Years of Excellence" },
+              { value: "7+", label: "Pan-India Representatives" },
+              { value: "10+", label: "Sectors Served" },
+              { value: "10+", label: "Global Source Countries" },
+            ].map((stat, i) => (
+              <div key={i} className={`p-8 text-center ${i < 3 ? 'border-r border-primary/20' : ''}`}>
+                <div className="font-display text-4xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
 
         {/* Why Trust Section */}
         <section className="mb-24">
@@ -70,7 +91,7 @@ export default function About() {
               },
               {
                 icon: Network,
-                title: "Global Network",
+                title: "Global Supplier Network",
                 desc: "Access to high-quality equipment and technology from renowned manufacturers in Europe, CIS countries, and India."
               },
               {
@@ -85,8 +106,13 @@ export default function About() {
               },
               {
                 icon: Users,
-                title: "Customer-Centric",
+                title: "Customer-Centric Approach",
                 desc: "Tailored solutions designed to meet the unique needs of each client, ensuring long-term partnerships."
+              },
+              {
+                icon: Award,
+                title: "ISO Certified",
+                desc: "Certified to ISO 9001:2015 and ISO 14001:2015 standards, ensuring consistent quality and environmentally responsible operations."
               }
             ].map((feature, i) => (
               <FadeIn key={i} delay={i * 0.1}>

@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "wouter";
-import { MapPin, Phone, Mail, Hexagon, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, Hexagon, ArrowUpRight, PhoneCall } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="bg-card border-t border-primary/10 pt-16 pb-8 relative overflow-hidden">
-      {/* Decorative background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -27,6 +26,10 @@ export function Footer() {
               <span className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                 EST. 1989
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+                ISO 9001:2015 CERTIFIED
               </span>
               <span className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-primary rounded-full" />
@@ -67,7 +70,7 @@ export function Footer() {
             </h4>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {[
-                "Bhilai", "Bokaro", "Rourkela", "Visakhapatnam", "Bhopal", "Kudan Kulam", "Kolkata", "Jamshedpur", "Chennai"
+                "Bokaro", "Bhilai", "Rourkela", "Visakhapatnam", "Bhopal", "Kudankulam"
               ].map((office) => (
                 <li key={office} className="text-sm text-foreground/60 flex items-center gap-2">
                   <span className="text-primary/50 text-xs">/</span> {office}
@@ -84,7 +87,14 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3 text-sm text-foreground/70">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span>New Delhi, India</span>
+                <span>622, Hemkunt Chambers-89, Nehru Place, New Delhi – 110019</span>
+              </li>
+              <li className="flex items-start gap-3 text-sm text-foreground/70">
+                <PhoneCall className="w-5 h-5 text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+911126441901" className="hover:text-primary transition-colors">+91-11-26441901</a>
+                  <a href="tel:+911126486910" className="hover:text-primary transition-colors">+91-11-26486910</a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/70">
                 <Phone className="w-5 h-5 text-primary shrink-0" strokeWidth={1.5} />

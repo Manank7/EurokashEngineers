@@ -3,31 +3,35 @@ import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTran
 import { MapPin } from "lucide-react";
 
 export default function Clients() {
-  const clients = [
-    "Steel Authority of India Ltd. (SAIL)",
-    "National Thermal Power Corporation Ltd. (NTPC) — Kahalgaon, Vindhyachal, Sipat, Barh Power Plants",
-    "Indian Oil Corporation Ltd. (IOCL)",
+  const primaryClients = [
+    "Steel Authority of India Ltd. (SAIL) — BSL, BSP, RSP, DSP, IISCO Burnpur",
+    "National Thermal Power Corporation Ltd. (NTPC) — Kahalgaon, Vindhyachal, Sipat, Barh",
+    "Rashtriya Ispat Nigam Ltd. — VSP, Visakhapatnam",
+    "Bharat Heavy Electricals Ltd. (BHEL) — Bhopal & Haridwar",
+    "TATA Steels — Neelachal Ispat Nigam Ltd., Odisha",
+    "Neyveli Lignite Corporation India Ltd. — Neyveli, Tamil Nadu",
+    "Nuclear Power Corporation of India Ltd. (NPCIL)",
+    "Bokaro Power Supply Company (P) Ltd. — Bokaro (SAIL-DVC Joint Venture)",
+  ];
+
+  const otherClients = [
     "Gas Authority of India Ltd. (GAIL)",
-    "Bharat Heavy Electricals Limited (BHEL)",
+    "Indian Oil Corporation Ltd. (IOCL)",
     "Tata Consultancy Ltd.",
     "Larsen & Toubro (L&T)",
     "Jindal Steel & Power Ltd.",
     "Engineers India Ltd. (EIL)",
-    "Nuclear Power Corporation of India Ltd. (NPCIL)",
-    "Hindustan Shipyard Ltd."
+    "Hindustan Shipyard Ltd.",
   ];
 
   const offices = [
     { city: "New Delhi", type: "Head Office", desc: "Central operations and strategic management." },
-    { city: "Bhilai", type: "Regional Office", desc: "Serving the local steel industry hub." },
     { city: "Bokaro", type: "Regional Office", desc: "Covering Kolkata, Durgapur & Ranchi." },
-    { city: "Rourkela", type: "Regional Office", desc: "Dedicated support for local infrastructure." },
+    { city: "Bhilai", type: "Regional Office", desc: "Serving the local steel industry hub." },
     { city: "Visakhapatnam", type: "Regional Office", desc: "Covering Hyderabad and southern port projects." },
     { city: "Bhopal", type: "Regional Office", desc: "Central India heavy engineering support." },
-    { city: "Kudan Kulam", type: "Regional Office", desc: "Nuclear power sector operations." },
-    { city: "Kolkata", type: "Regional Office", desc: "Eastern India industrial and port operations." },
-    { city: "Jamshedpur", type: "Regional Office", desc: "Steel belt operations and heavy industry support." },
-    { city: "Chennai", type: "Regional Office", desc: "Southern India manufacturing and defence sector." },
+    { city: "Kudankulam", type: "Regional Office", desc: "Nuclear power sector operations." },
+    { city: "Rourkela", type: "Regional Office", desc: "Dedicated support for local infrastructure." },
   ];
 
   return (
@@ -36,36 +40,50 @@ export default function Clients() {
 
       <div className="container mx-auto px-4 md:px-6">
 
-        {/* Clients Section */}
-        <section className="mb-24">
+        {/* Primary Clients Section */}
+        <section className="mb-16">
           <FadeIn>
             <div className="mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Prestigious Clientele</h2>
               <p className="text-foreground/70 text-lg text-justify">
-                For over three decades, Eurokash has been the trusted partner for India's most critical industrial infrastructure, commanding respect across the public and private sectors.
+                Eurokash Engineers & Consultants serves a prestigious and diverse portfolio of clients across India's industrial landscape, including India's largest public sector undertakings and leading private enterprises.
               </p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {clients.map((client, i) => (
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+            {primaryClients.map((client, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <div className="flex items-center p-4 border border-foreground/10 bg-card/50 hover:bg-card hover:border-primary/30 transition-all group">
-                  <div className="w-2 h-2 bg-primary rounded-full mr-4 group-hover:scale-150 transition-transform" />
+                <div className="flex items-start p-4 border border-foreground/10 bg-card/50 hover:bg-card hover:border-primary/30 transition-all group">
+                  <div className="w-2 h-2 bg-primary rounded-full mr-4 mt-2 shrink-0 group-hover:scale-150 transition-transform" />
                   <span className="font-mono text-sm tracking-wide text-foreground/90">{client}</span>
                 </div>
               </FadeIn>
             ))}
           </div>
+
+          {/* Others */}
+          <FadeIn delay={0.3}>
+            <div className="border border-primary/20 bg-primary/5 p-6">
+              <div className="font-mono text-xs tracking-widest text-primary uppercase mb-4">Also Serving</div>
+              <div className="flex flex-wrap gap-3">
+                {otherClients.map((client, i) => (
+                  <span key={i} className="font-mono text-sm text-foreground/80 border border-foreground/10 bg-card px-3 py-1.5">
+                    {client}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </section>
 
         {/* Global Presence Section */}
         <section className="mb-20">
           <FadeIn>
             <div className="border-t border-primary/20 pt-16 mb-12">
-              <h2 className="text-3xl font-display font-bold uppercase mb-4">Global Presence, Local Expertise</h2>
+              <h2 className="text-3xl font-display font-bold uppercase mb-4">Pan-India Network</h2>
               <p className="text-foreground/70 text-lg text-justify">
-                Eurokash is headquartered in New Delhi with regional representatives strategically located across India's major industrial centres, ensuring prompt local support and nation wide service and delivery.
+                Eurokash is headquartered in New Delhi with regional representatives strategically located across India's major industrial centres, ensuring prompt local support and nationwide service & delivery.
               </p>
             </div>
           </FadeIn>
