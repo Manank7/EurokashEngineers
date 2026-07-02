@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { MapPin, Phone, Mail, Hexagon, ArrowUpRight, PhoneCall } from "lucide-react";
+import { MapPin, Mail, Hexagon, ArrowUpRight, PhoneCall } from "lucide-react";
 
 export function Footer() {
   return (
@@ -95,12 +95,6 @@ export function Footer() {
                   <a href="tel:+911126441901" className="hover:text-primary transition-colors">+91-11-26441901</a>
                   <a href="tel:+911126486910" className="hover:text-primary transition-colors">+91-11-26486910</a>
                 </div>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-foreground/70">
-                <Phone className="w-5 h-5 text-primary shrink-0" strokeWidth={1.5} />
-                <a href="tel:+919811339188" className="hover:text-primary transition-colors" data-testid="link-footer-phone">
-                  +91 98113 39188
-                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-foreground/70">
                 <Mail className="w-5 h-5 text-primary shrink-0" strokeWidth={1.5} />

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { MapPin, Phone, Mail, Building, Send, PhoneCall } from "lucide-react";
+import { MapPin, Mail, Building, Send, PhoneCall } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -79,16 +79,6 @@ export default function Contact() {
                       </a>
                       <a href="tel:+911126486910" className="text-foreground/80 hover:text-primary transition-colors font-mono block">
                         +91-11-26486910
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Mobile</h4>
-                      <a href="tel:+919811339188" className="text-foreground/80 hover:text-primary transition-colors font-mono" data-testid="link-contact-phone">
-                        +91 98113 39188
                       </a>
                     </div>
                   </div>
