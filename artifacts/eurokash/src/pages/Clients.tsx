@@ -39,7 +39,7 @@ export default function Clients() {
         {/* Clients Section */}
         <section className="mb-24">
           <FadeIn>
-            <div className="max-w-3xl mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Prestigious Clientele</h2>
               <p className="text-foreground/70 text-lg text-justify">
                 For over three decades, Eurokash has been the trusted partner for India's most critical industrial infrastructure, commanding respect across the public and private sectors.
@@ -64,7 +64,7 @@ export default function Clients() {
           <FadeIn>
             <div className="border-t border-primary/20 pt-16 mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Global Presence, Local Expertise</h2>
-              <p className="text-foreground/70 text-lg max-w-3xl text-justify">
+              <p className="text-foreground/70 text-lg text-justify">
                 Eurokash is headquartered in New Delhi with regional representatives strategically located across India's major industrial centres, ensuring prompt local support and nation wide service and delivery.
               </p>
             </div>
