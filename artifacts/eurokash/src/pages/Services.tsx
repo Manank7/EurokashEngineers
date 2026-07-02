@@ -10,7 +10,7 @@ export default function Services() {
 
       <div className="container mx-auto px-4 md:px-6">
         {/* Intro */}
-        <FadeIn className="max-w-3xl mb-16">
+        <FadeIn className="mb-16">
           <p className="text-xl text-foreground/80 leading-relaxed text-justify">
             Beyond procurement, Eurokash provides specialized consultancy, tender management, and modernization services to ensure legacy industrial plants remain competitive and efficient.
           </p>

@@ -19,15 +19,15 @@ export default function Clients() {
 
   const offices = [
     { city: "New Delhi", type: "Head Office", desc: "Central operations and strategic management." },
-    { city: "Bhilai", type: "Regional Representative", desc: "Serving the local steel industry hub." },
-    { city: "Bokaro", type: "Regional Representative", desc: "Covering Kolkata, Durgapur & Ranchi." },
-    { city: "Rourkela", type: "Regional Representative", desc: "Dedicated support for local infrastructure." },
-    { city: "Visakhapatnam", type: "Regional Representative", desc: "Covering Hyderabad and southern port projects." },
-    { city: "Bhopal", type: "Regional Representative", desc: "Central India heavy engineering support." },
-    { city: "Kudan Kulam", type: "Regional Representative", desc: "Nuclear power sector operations." },
-    { city: "Kolkata", type: "Regional Representative", desc: "Eastern India industrial and port operations." },
-    { city: "Jamshedpur", type: "Regional Representative", desc: "Steel belt operations and heavy industry support." },
-    { city: "Chennai", type: "Regional Representative", desc: "Southern India manufacturing and defence sector." },
+    { city: "Bhilai", type: "Regional Office", desc: "Serving the local steel industry hub." },
+    { city: "Bokaro", type: "Regional Office", desc: "Covering Kolkata, Durgapur & Ranchi." },
+    { city: "Rourkela", type: "Regional Office", desc: "Dedicated support for local infrastructure." },
+    { city: "Visakhapatnam", type: "Regional Office", desc: "Covering Hyderabad and southern port projects." },
+    { city: "Bhopal", type: "Regional Office", desc: "Central India heavy engineering support." },
+    { city: "Kudan Kulam", type: "Regional Office", desc: "Nuclear power sector operations." },
+    { city: "Kolkata", type: "Regional Office", desc: "Eastern India industrial and port operations." },
+    { city: "Jamshedpur", type: "Regional Office", desc: "Steel belt operations and heavy industry support." },
+    { city: "Chennai", type: "Regional Office", desc: "Southern India manufacturing and defence sector." },
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function Clients() {
         {/* Clients Section */}
         <section className="mb-24">
           <FadeIn>
-            <div className="max-w-3xl mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Prestigious Clientele</h2>
               <p className="text-foreground/70 text-lg text-justify">
                 For over three decades, Eurokash has been the trusted partner for India's most critical industrial infrastructure, commanding respect across the public and private sectors.
@@ -64,7 +64,7 @@ export default function Clients() {
           <FadeIn>
             <div className="border-t border-primary/20 pt-16 mb-12">
               <h2 className="text-3xl font-display font-bold uppercase mb-4">Global Presence, Local Expertise</h2>
-              <p className="text-foreground/70 text-lg max-w-3xl text-justify">
+              <p className="text-foreground/70 text-lg text-justify">
                 Eurokash is headquartered in New Delhi with regional representatives strategically located across India's major industrial centres, ensuring prompt local support and nation wide service and delivery.
               </p>
             </div>
