@@ -167,7 +167,7 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {[
               {
                 title: "Industrial Equipment Supply",
@@ -190,12 +190,12 @@ export default function Home() {
                 link: "/services"
               }
             ].map((card, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <Link href={card.link} className="block group">
-                  <div className="bg-card border border-primary/10 p-8 h-full transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
-                    <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors" strokeWidth={1} />
-                    <h3 className="font-display text-xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors">{card.title}</h3>
-                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify">{card.desc}</p>
+              <FadeIn key={i} delay={i * 0.1} className="h-full">
+                <Link href={card.link} className="block group h-full">
+                  <div className="bg-card border border-primary/10 p-8 h-full flex flex-col transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
+                    <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors shrink-0" strokeWidth={1} />
+                    <h3 className="font-display text-xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors min-h-[3.5rem]">{card.title}</h3>
+                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify flex-1">{card.desc}</p>
                     <div className="mt-auto flex items-center text-primary font-mono text-xs tracking-widest uppercase">
                       Explore <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </div>
