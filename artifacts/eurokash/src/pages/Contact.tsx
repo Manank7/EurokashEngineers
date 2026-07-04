@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { MapPin, Phone, Mail, Building, Send } from "lucide-react";
+import { MapPin, Mail, Building, Send, PhoneCall } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -42,7 +42,7 @@ export default function Contact() {
 
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-24 mb-20">
-
+          
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-10">
             <FadeIn>
@@ -54,34 +54,44 @@ export default function Contact() {
                     <div>
                       <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Company</h4>
                       <p className="font-bold text-lg">EUROKASH ENGINEERS & CONSULTANTS</p>
-                      <p className="text-sm text-foreground/60 mt-1">Established 1989</p>
+                      <p className="text-sm text-foreground/60 mt-1">Established 1989 · ISO 9001:2015 Certified</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <MapPin className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Address</h4>
+                      <p className="text-foreground/80 leading-relaxed">
+                        622, Hemkunt Chambers-89<br />
+                        Nehru Place, New Delhi – 110019<br />
+                        India
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <MapPin className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
+                    <PhoneCall className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
                     <div>
-                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Location</h4>
-                      <p className="text-foreground/80">New Delhi, India</p>
+                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Landline</h4>
+                      <a href="tel:+911126441901" className="text-foreground/80 hover:text-primary transition-colors font-mono block">
+                        +91-11-26441901
+                      </a>
+                      <a href="tel:+911126486910" className="text-foreground/80 hover:text-primary transition-colors font-mono block">
+                        +91-11-26486910
+                      </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4">
                     <Mail className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
                     <div>
-                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Electronic Mail</h4>
-                      <a href="mailto:info@eurokash.com" className="text-foreground/80 hover:text-primary transition-colors">
+                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Email</h4>
+                      <a href="mailto:info@eurokash.com" className="text-foreground/80 hover:text-primary transition-colors block">
                         info@eurokash.com
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <Phone className="w-6 h-6 text-primary shrink-0" strokeWidth={1.5} />
-                    <div>
-                      <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Phone</h4>
-                      <a href="tel:+919811339188" className="text-foreground/80 hover:text-primary transition-colors font-mono" data-testid="link-contact-phone">
-                        +91 98113 39188
+                      <a href="mailto:eurokash@yahoo.com" className="text-foreground/80 hover:text-primary transition-colors block">
+                        eurokash@yahoo.com
                       </a>
                     </div>
                   </div>
@@ -97,6 +107,7 @@ export default function Contact() {
                   <li>Project Consultancy</li>
                   <li>Modernization & Reconstruction</li>
                   <li>Global Sourcing (CIS focus)</li>
+                  <li>Global Tender Management</li>
                 </ul>
               </div>
             </FadeIn>
@@ -108,7 +119,7 @@ export default function Contact() {
               <div className="bg-card border border-primary/30 p-8 md:p-12 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary" />
                 <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary" />
-
+                
                 <h2 className="text-3xl font-display font-bold uppercase mb-2">Submit Inquiry</h2>
                 <p className="text-foreground/60 text-sm mb-8 font-mono">ALL FIELDS ARE REQUIRED FOR PROCESSING.</p>
 
@@ -163,6 +174,7 @@ export default function Contact() {
                         <option value="equipment">Equipment Sourcing</option>
                         <option value="modernization">Plant Modernization</option>
                         <option value="consultancy">Project Consultancy</option>
+                        <option value="tender">Tender Management</option>
                         <option value="other">Other Inquiry</option>
                       </select>
                     </div>

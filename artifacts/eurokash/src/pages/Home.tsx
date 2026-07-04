@@ -26,7 +26,7 @@ export default function Home() {
               className="flex items-center gap-3 mb-6"
             >
               <div className="h-[2px] w-8 bg-primary shadow-[0_0_10px_rgba(0,255,255,0.8)]" />
-              <span className="font-mono text-sm md:text-base tracking-[0.3em] text-primary uppercase font-bold shadow-primary drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">
+              <span className="font-mono text-sm md:text-base tracking-[0.3em] text-primary uppercase font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">
                 Established 1989
               </span>
             </motion.div>
@@ -49,7 +49,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg md:text-2xl text-foreground/80 max-w-2xl mb-6 font-light leading-relaxed text-justify"
             >
-              Innovating Industrial Solutions, Empowering Global Projects. 
+              Innovating Industrial Solutions, Empowering Global Projects.
               The trusted engineering command center for steel, power, and nuclear sectors.
             </motion.p>
 
@@ -91,8 +91,13 @@ export default function Home() {
           </div>
           <div className="w-[1px] bg-primary/20" />
           <div>
-            <div className="font-display text-4xl font-bold text-primary">10</div>
-            <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Cities</div>
+            <div className="font-display text-4xl font-bold text-primary">10+</div>
+            <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Sectors</div>
+          </div>
+          <div className="w-[1px] bg-primary/20" />
+          <div>
+            <div className="font-display text-4xl font-bold text-primary">10+</div>
+            <div className="font-mono text-xs tracking-widest text-foreground/60 uppercase mt-1">Countries</div>
           </div>
         </motion.div>
       </section>
@@ -111,7 +116,7 @@ export default function Home() {
                 />
                 <div className="absolute bottom-4 left-4 z-20 bg-background/90 backdrop-blur-sm border border-primary/30 p-3 font-mono text-[10px] text-primary">
                   <div className="flex items-center gap-2"><Activity className="w-3 h-3"/> SYS.STATUS: NOMINAL</div>
-                  <div className="flex items-center gap-2 mt-1"><Settings className="w-3 h-3"/> PRESSURE: OPTIMAL</div>
+                  <div className="flex items-center gap-2 mt-1"><Settings className="w-3 h-3"/> ISO 9001:2015 CERTIFIED</div>
                 </div>
               </div>
             </FadeIn>
@@ -123,14 +128,14 @@ export default function Home() {
               <p className="text-foreground/70 text-lg mb-8 leading-relaxed text-justify">
                 Eurokash Engineers & Consultants is a premier trading house and industrial equipment distributor. 
                 We specialize in sourcing and supplying high-quality machinery for the Steel, Power, Petrochemical, 
-                Refinery, Mining, Nuclear, and Defence sectors.
+                Refinery, Mining, Nuclear, Defence and Heavy Engineering sectors.
               </p>
               
               <ul className="space-y-4 mb-10">
                 {[
-                  { icon: ShieldCheck, text: "Trusted by SAIL, NTPC, IOCL & NPCIL" },
-                  { icon: Globe, text: "Vast global supplier network (CIS, Germany, Italy)" },
-                  { icon: Zap, text: "End-to-End modernization and consultancy" }
+                  { icon: ShieldCheck, text: "Trusted by SAIL, NTPC, BHEL & NPCIL" },
+                  { icon: Globe, text: "Global supplier network across 10+ countries" },
+                  { icon: Zap, text: "ISO 9001:2015 & ISO 14001:2015 Certified" }
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-4 text-foreground/80">
                     <div className="flex-shrink-0 w-10 h-10 rounded bg-primary/10 flex items-center justify-center border border-primary/20 text-primary">
@@ -162,30 +167,35 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {[
               {
-                title: "Industrial Equipment",
-                desc: "Centrifugal pumps, high-pressure valves, steam boilers, turbines, and rolling mill equipment.",
+                title: "Industrial Equipment Supply",
+                desc: "Sourcing and distribution of high-quality machinery, spare parts and capital equipment from global manufacturers.",
                 link: "/products"
               },
               {
                 title: "Sourcing & Modernization",
-                desc: "Reconstruction of legacy CIS-origin equipment and specialized global sourcing.",
+                desc: "Reconstruction and modernization of legacy Russian and CIS-origin equipment for Indian heavy industries.",
                 link: "/services"
               },
               {
                 title: "Project Consultancy",
-                desc: "Techno-Economic Feasibility Reports and End-to-End Project Management.",
+                desc: "Techno-economic feasibility reports, end-to-end project management and government liaison services.",
+                link: "/services"
+              },
+              {
+                title: "Global Tender Management",
+                desc: "Expert management of international tenders ensuring compliance with private and government procurement norms.",
                 link: "/services"
               }
             ].map((card, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <Link href={card.link} className="block group">
-                  <div className="bg-card border border-primary/10 p-8 h-full transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
-                    <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors" strokeWidth={1} />
-                    <h3 className="font-display text-2xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors">{card.title}</h3>
-                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify">{card.desc}</p>
+              <FadeIn key={i} delay={i * 0.1} className="h-full">
+                <Link href={card.link} className="block group h-full">
+                  <div className="bg-card border border-primary/10 p-8 h-full flex flex-col transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
+                    <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors shrink-0" strokeWidth={1} />
+                    <h3 className="font-display text-xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors min-h-[3.5rem]">{card.title}</h3>
+                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify flex-1">{card.desc}</p>
                     <div className="mt-auto flex items-center text-primary font-mono text-xs tracking-widest uppercase">
                       Explore <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                     </div>
