@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { MapPin, Mail, Hexagon, ArrowUpRight, PhoneCall } from "lucide-react";
+import { MapPin, Mail, ArrowUpRight, PhoneCall } from "lucide-react";
 
 export function Footer() {
   return (
@@ -12,7 +12,7 @@ export function Footer() {
           {/* Brand Col */}
           <div className="col-span-1 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <Hexagon className="w-8 h-8 text-primary" strokeWidth={1.5} />
+              <img src="/images/logo.png" alt="Eurokash Engineers & Consultants Logo" className="w-10 h-10 object-contain" />
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-tight tracking-widest text-foreground">
                   EUROKASH

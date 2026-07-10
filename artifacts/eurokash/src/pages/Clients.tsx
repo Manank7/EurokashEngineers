@@ -26,12 +26,12 @@ export default function Clients() {
 
   const offices = [
     { city: "New Delhi", type: "Head Office", desc: "Central operations and strategic management." },
-    { city: "Bokaro", type: "Regional Office", desc: "Covering Kolkata, Durgapur & Ranchi." },
-    { city: "Bhilai", type: "Regional Office", desc: "Serving the local steel industry hub." },
-    { city: "Visakhapatnam", type: "Regional Office", desc: "Covering Hyderabad and southern port projects." },
-    { city: "Bhopal", type: "Regional Office", desc: "Central India heavy engineering support." },
-    { city: "Kudankulam", type: "Regional Office", desc: "Nuclear power sector operations." },
-    { city: "Rourkela", type: "Regional Office", desc: "Dedicated support for local infrastructure." },
+    { city: "Bokaro", type: "Regional Representative", desc: "Covering Kolkata, Durgapur & Ranchi." },
+    { city: "Bhilai", type: "Regional Representative", desc: "Serving the local steel industry hub." },
+    { city: "Visakhapatnam", type: "Regional Representative", desc: "Covering Hyderabad and southern port projects." },
+    { city: "Bhopal", type: "Regional Representative", desc: "Central India heavy engineering support." },
+    { city: "Kudankulam", type: "Regional Representative", desc: "Nuclear power sector operations." },
+    { city: "Rourkela", type: "Regional Representative", desc: "Dedicated support for local infrastructure." },
   ];
 
   return (
