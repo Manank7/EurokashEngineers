@@ -5,7 +5,7 @@ import { CheckCircle2, Factory, Network, Target, Users, Award } from "lucide-rea
 export default function About() {
   return (
     <PageTransition>
-      <PageHeader title="Our Legacy" subtitle="Established 1989" />
+      <PageHeader title="Our Legacy" subtitle="Who We Are?" />
 
       <div className="container mx-auto px-4 md:px-6">
         {/* Intro Section */}
@@ -79,6 +79,9 @@ export default function About() {
               <h2 className="text-3xl font-display font-bold uppercase inline-block border-b-2 border-primary pb-2">
                 Why Trust Eurokash
               </h2>
+              <p className="text-foreground/70 text-lg leading-relaxed mt-6">
+                At Eurokash, we leverage decades of industry experience to provide a comprehensive range of products and services. Our offerings are designed to meet the unique needs of large-scale industrial projects, from project consultancy to equipment supply and modernization.
+              </p>
             </div>
           </FadeIn>
 
