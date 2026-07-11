@@ -8,20 +8,18 @@ export function Footer() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand Col */}
-          <div className="col-span-1 lg:col-span-1">
+          <div>
             <Link href="/" className="flex items-center gap-3 mb-6">
               <img src="/images/logo.png" alt="Eurokash Engineers & Consultants Logo" className="w-10 h-10 object-contain" />
               <div className="flex flex-col">
                 <span className="font-display font-bold text-xl leading-tight tracking-widest text-foreground">
                   EUROKASH
                 </span>
+                <span className="text-[0.6rem] font-mono tracking-[0.2em] text-primary/80 uppercase">Engineers & Consultants</span>
               </div>
             </Link>
-            <p className="text-foreground/70 text-sm leading-relaxed mb-6 font-sans">
-              Innovating Industrial Solutions, Empowering Global Projects. A premier trading house and industrial equipment distributor since 1989.
-            </p>
             <div className="flex flex-col gap-2 font-mono text-xs text-foreground/50">
               <span className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-primary rounded-full" />
@@ -58,22 +56,6 @@ export function Footer() {
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
                     <span className="group-hover:translate-x-1 transition-transform">{link.label}</span>
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Offices */}
-          <div>
-            <h4 className="font-mono text-sm tracking-widest text-foreground mb-6 uppercase border-b border-primary/20 pb-2 inline-block">
-              Regional Presence
-            </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
-              {[
-                "Bokaro", "Bhilai", "Rourkela", "Visakhapatnam", "Bhopal", "Kudankulam"
-              ].map((office) => (
-                <li key={office} className="text-sm text-foreground/60 flex items-center gap-2">
-                  <span className="text-primary/50 text-xs">/</span> {office}
                 </li>
               ))}
             </ul>
