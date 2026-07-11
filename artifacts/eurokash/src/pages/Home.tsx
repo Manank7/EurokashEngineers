@@ -53,28 +53,6 @@ export default function Home() {
               The trusted engineering command center for steel, power, and nuclear sectors.
             </motion.p>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-wrap gap-4"
-            >
-              <Link 
-                href="/services" 
-                className="group flex items-center gap-3 bg-primary text-background px-8 py-4 font-mono font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 shadow-[0_0_20px_-5px_rgba(0,255,255,0.5)]"
-                data-testid="link-hero-services"
-              >
-                Explore Services
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link 
-                href="/about" 
-                className="group flex items-center gap-3 bg-transparent border border-primary/50 text-foreground px-8 py-4 font-mono font-bold tracking-widest uppercase hover:border-primary hover:bg-primary/10 transition-all duration-300"
-                data-testid="link-hero-about"
-              >
-                Our Legacy
-              </Link>
-            </motion.div>
           </div>
         </div>
 
