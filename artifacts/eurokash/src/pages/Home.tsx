@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "wouter";
-import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings, Hexagon } from "lucide-react";
+import { ArrowRight, Activity, ShieldCheck, Globe, Zap, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/layout/PageTransition";
 
@@ -193,12 +193,8 @@ export default function Home() {
               <FadeIn key={i} delay={i * 0.1} className="h-full">
                 <Link href={card.link} className="block group h-full">
                   <div className="bg-card border border-primary/10 p-8 h-full flex flex-col transition-all duration-300 hover:bg-card/80 hover:border-primary/50 relative overflow-hidden">
-                    <Hexagon className="w-12 h-12 text-primary/40 mb-6 group-hover:text-primary transition-colors shrink-0" strokeWidth={1} />
-                    <h3 className="font-display text-xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors min-h-[3.5rem]">{card.title}</h3>
-                    <p className="text-foreground/60 text-sm leading-relaxed mb-6 font-sans text-justify flex-1">{card.desc}</p>
-                    <div className="mt-auto flex items-center text-primary font-mono text-xs tracking-widest uppercase">
-                      Explore <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
-                    </div>
+                    <h3 className="font-display text-xl font-bold uppercase mb-3 text-foreground group-hover:text-primary transition-colors">{card.title}</h3>
+                    <p className="text-foreground/60 text-sm leading-relaxed font-sans text-justify flex-1">{card.desc}</p>
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
                   </div>
                 </Link>
@@ -208,28 +204,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-24 relative border-t border-primary/20 bg-card overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero.png')] opacity-10 bg-cover bg-center mix-blend-overlay" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <FadeIn>
-            <Hexagon className="w-16 h-16 text-primary mx-auto mb-6" strokeWidth={1} />
-            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase mb-6">Initiate Project</h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto mb-6 text-justify mx-auto">
-              Engage our technical consultancy team to discuss feasibility, sourcing, or modernization of your industrial facility.
-            </p>
-            <div>
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center gap-3 bg-primary text-background px-10 py-5 font-mono font-bold tracking-widest uppercase hover:bg-white transition-all shadow-[0_0_30px_-5px_rgba(0,255,255,0.4)]"
-                data-testid="link-home-cta"
-              >
-                Contact Command Center
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
     </div>
   );
 }

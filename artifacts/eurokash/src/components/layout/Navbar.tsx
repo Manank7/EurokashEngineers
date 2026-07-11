@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Hexagon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -35,9 +35,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group" data-testid="link-home-logo">
-          <div className="relative flex items-center justify-center w-10 h-10">
-            <Hexagon className="absolute inset-0 w-full h-full text-primary transition-transform duration-700 group-hover:rotate-180" strokeWidth={1.5} />
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+          <div className="relative flex items-center justify-center w-11 h-11">
+            <img
+              src="/images/logo.png"
+              alt="Eurokash Engineers & Consultants Logo"
+              className="w-full h-full object-contain transition-transform duration-700 group-hover:rotate-[15deg]"
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-display font-bold text-xl leading-tight tracking-widest text-foreground">
