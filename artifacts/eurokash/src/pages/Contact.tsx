@@ -98,19 +98,6 @@ export default function Contact() {
                 </div>
               </div>
             </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div>
-                <h3 className="font-mono text-sm tracking-widest text-foreground uppercase mb-4 border-b border-primary/20 pb-2">Business Operations</h3>
-                <ul className="text-sm text-foreground/70 space-y-2 font-mono">
-                  <li>Industrial Equipment Distribution</li>
-                  <li>Project Consultancy</li>
-                  <li>Modernization & Reconstruction</li>
-                  <li>Global Sourcing (CIS focus)</li>
-                  <li>Global Tender Management</li>
-                </ul>
-              </div>
-            </FadeIn>
           </div>
 
           {/* Form */}

@@ -6,7 +6,7 @@ import { Link } from "wouter";
 export default function Services() {
   return (
     <PageTransition>
-      <PageHeader title="Our Services" subtitle="Consultancy & Modernization" />
+      <PageHeader title="Our Services" subtitle="Core Capabilities" />
 
       <div className="container mx-auto px-4 md:px-6">
         {/* Intro */}
