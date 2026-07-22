@@ -140,10 +140,6 @@ function MechanicalCarousel() {
 
       {/* Bottom-left label — mirrors "Heavy Machinery Supply" style */}
       <div className="absolute bottom-0 left-0 p-6 md:p-8">
-        <div className="flex items-center gap-3 mb-1">
-          <div className="h-[2px] w-6 bg-amber-500" />
-          <span className="font-mono text-xs tracking-widest text-amber-400 uppercase">Mechanical Equipment</span>
-        </div>
         <h3
           className="text-2xl md:text-3xl font-display font-bold uppercase text-amber-100 drop-shadow-md transition-opacity duration-400"
           style={{ opacity: animating ? 0 : 1 }}
