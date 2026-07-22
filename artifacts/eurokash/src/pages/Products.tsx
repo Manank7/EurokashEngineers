@@ -1,85 +1,193 @@
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { PageTransition, PageHeader, FadeIn } from "@/components/layout/PageTransition";
-import { Cog, Droplets, Zap, Wind, Gauge, Thermometer, Wrench, CircuitBoard, Cpu, Settings2 } from "lucide-react";
+import { Cog, Droplets, Zap, Wind, Gauge, Thermometer, Wrench, CircuitBoard, Cpu, Settings2, ChevronLeft, ChevronRight } from "lucide-react";
+
+const mechanicalCategories = [
+  {
+    title: "Turbines & Turbogenerators",
+    icon: Zap,
+    desc: "Steam turbines (condensing, back pressure, driving), hydraulic turbines (Francis, Kaplan, Pelton, pump-turbine), gas turbines and turbogenerators for massive-scale power generation."
+  },
+  {
+    title: "Pumps",
+    icon: Droplets,
+    desc: "Dynamic & volumetric pumps and pump units (pumps with electric motors) for different types of liquids used in heavy industries, including specialized slurry pumps."
+  },
+  {
+    title: "Compressors & Exhausters",
+    icon: Wind,
+    desc: "Centrifugal, reciprocal and screw type air and gas compressors, exhausters, superchargers, turbochargers, fans and blowers for gas compressor stations and power generation."
+  },
+  {
+    title: "Valves",
+    icon: Gauge,
+    desc: "Gate valves, stop valves, return valves, safety valves, throttle-control valves, impulse valves and hot blast stove valves for power plants, steel plants and nuclear power stations."
+  },
+  {
+    title: "Boilers & Heat Exchangers",
+    icon: Thermometer,
+    desc: "Steam boilers, hot and warm water boilers, air and gas coolers, heat exchangers, gas cylinders, tanks and other auxiliary mechanical equipment."
+  },
+  {
+    title: "Presses, Forging & Casting",
+    icon: Settings2,
+    desc: "Mechanical and hydraulic presses, manipulators, forming machines and other forging equipment. First-quality mill rolls, castings, forgings, ingots and finished products."
+  },
+  {
+    title: "Gearboxes, Reducers & Bearings",
+    icon: Cog,
+    desc: "Various types of gearboxes and reducers applicable in main and auxiliary equipment. Sleeve bearings and roll bearings of different modifications and purpose."
+  },
+  {
+    title: "Electrolysers & Filters",
+    icon: CircuitBoard,
+    desc: "Different types of electrolysers, filters and other equipment used to produce hydrogen, oxygen, oxygen/hydrogen mix and oxyhydrogen gas by means of electrolysis of water."
+  },
+  {
+    title: "Machine Tools (CNC)",
+    icon: Wrench,
+    desc: "High quality machine tools including CNC: lathes, vertical and horizontal drilling, boring, milling, turning, cutting and grinding machines, centers and other equipment."
+  }
+];
+
+const electricalCategories = [
+  {
+    title: "Low Voltage Control Gear",
+    icon: Cpu,
+    desc: "Contactors and switches with rated voltage up to 1000 V AC and up to 1500 V DC for industrial control applications."
+  },
+  {
+    title: "High Voltage Gear & Equipment",
+    icon: Zap,
+    desc: "Oil power transformers for voltage 6–110 kV, smoothly regulated arcing oil reactors, and high voltage circuit-breakers."
+  },
+  {
+    title: "Electric Machines & Drives",
+    icon: Settings2,
+    desc: "Asynchronous electric motors (100–32,000 kW, 380V–6(11) kV), synchronous motors and generators, excitation systems, and frequency converters."
+  }
+];
+
+const generalEquipment = [
+  "Centrifugal Pumps (including slurry pumps)",
+  "Electric Motors (HT/LT, DC/AC)",
+  "High-Pressure Valves",
+  "Steam Boilers, Turbines & Equipment",
+  "Compressors, Exhauster & Blowers",
+  "Circuit Breakers, Relays, Thyristors, Contactors",
+  "Rolling Mill Equipment",
+  "Machine Tools & Presses (Forging, Hydraulic)"
+];
+
+const carouselSlides = [
+  { src: "/images/01-turbines-turbogenerators-a.jpg.jpeg", label: "Turbines & Turbogenerators" },
+  { src: "/images/02-turbines-turbogenerators-b.jpg.jpeg", label: "" },
+  { src: "/images/turbine-1-steam-turbine-hall.jpg.jpeg", label: "" },
+  { src: "/images/turbine-3-generator-hall-row.jpg.jpeg", label: "" },
+  { src: "/images/03-pumps-a.jpg.jpeg", label: "Pumps" },
+  { src: "/images/04-pumps-b.jpg.jpeg", label: "" },
+  { src: "/images/compressor-1-centrifugal-station.jpg.jpeg", label: "Compressors & Exhausters" },
+  { src: "/images/compressor-2-reciprocating.jpg.jpeg", label: "" },
+  { src: "/images/compressor-4-gas-station.jpg.jpeg", label: "" },
+  { src: "/images/compressor-and-exhauster.jpeg", label: "" },
+  { src: "/images/07-valves-a.jpg.jpeg", label: "Valves" },
+  { src: "/images/08-valves-b.jpg.jpeg", label: "" },
+  { src: "/images/09-boilers-heat-exchangers-a.jpg.jpeg", label: "Boilers & Heat Exchangers" },
+  { src: "/images/11-presses-forging-casting-a.jpg.jpeg", label: "Presses, Forging & Casting" },
+  { src: "/images/12-presses-forging-casting-b.jpg.jpeg", label: "" },
+  { src: "/images/13-gearboxes-reducers-bearings-a.jpg.jpeg", label: "Gearboxes, Reducers & Bearings" },
+  { src: "/images/14-gearboxes-reducers-bearings-b.jpg.jpeg", label: "" },
+  { src: "/images/25-bearings-c.jpg.jpeg", label: "" },
+  { src: "/images/15-machine-tools-a.jpg.jpeg", label: "Machine Tools (CNC)" },
+  { src: "/images/16-machine-tools-b.jpg.jpeg", label: "" },
+  { src: "/images/20-machine-tools-c.jpg.jpeg", label: "" },
+  { src: "/images/electrolysers-and-filters.jpeg", label: "Electrolysers & Filters" },
+];
+
+function MechanicalCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const goTo = useCallback((index: number) => {
+    if (animating) return;
+    setAnimating(true);
+    setCurrent((index + carouselSlides.length) % carouselSlides.length);
+    setTimeout(() => setAnimating(false), 400);
+  }, [animating]);
+
+  const prev = () => goTo(current - 1);
+  const next = () => goTo(current + 1);
+
+  useEffect(() => {
+    const timer = setInterval(() => goTo(current + 1), 4500);
+    return () => clearInterval(timer);
+  }, [current, goTo]);
+
+  const slide = carouselSlides[current];
+
+  return (
+    <div className="w-full h-[360px] md:h-[520px] relative border border-amber-600/30 overflow-hidden mb-12 group">
+      {/* Image */}
+      <img
+        key={current}
+        src={slide.src}
+        alt={slide.label}
+        className="w-full h-full object-cover transition-opacity duration-500"
+        style={{ opacity: animating ? 0 : 1 }}
+      />
+
+      {/* Gradient overlay — amber-toned like the banner */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a0a00] via-[#1a0a00]/30 to-transparent" />
+
+      {/* Bottom-left label — mirrors "Heavy Machinery Supply" style */}
+      <div className="absolute bottom-0 left-0 p-6 md:p-8">
+        <h3
+          className="text-2xl md:text-3xl font-display font-bold uppercase text-amber-100 drop-shadow-md transition-opacity duration-400"
+          style={{ opacity: animating ? 0 : 1 }}
+        >
+          {slide.label}
+        </h3>
+      </div>
+
+      {/* Slide counter — top right */}
+      <div className="absolute top-4 right-4 font-mono text-xs text-amber-300/80 tracking-widest">
+        {String(current + 1).padStart(2, "0")} / {String(carouselSlides.length).padStart(2, "0")}
+      </div>
+
+      {/* Arrow controls */}
+      <button
+        onClick={prev}
+        aria-label="Previous"
+        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center border border-amber-600/50 bg-black/40 text-amber-300 hover:bg-amber-600 hover:text-black hover:border-amber-600 transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next"
+        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 flex items-center justify-center border border-amber-600/50 bg-black/40 text-amber-300 hover:bg-amber-600 hover:text-black hover:border-amber-600 transition-all opacity-0 group-hover:opacity-100"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-4 right-6 flex gap-1.5">
+        {carouselSlides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`w-1.5 h-1.5 rounded-full transition-all ${
+              i === current ? "bg-amber-400 w-4" : "bg-amber-600/50 hover:bg-amber-500"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Products() {
-  const mechanicalCategories = [
-    {
-      title: "Turbines & Turbogenerators",
-      icon: Zap,
-      desc: "Steam turbines (condensing, back pressure, driving), hydraulic turbines (Francis, Kaplan, Pelton, pump-turbine), gas turbines and turbogenerators for massive-scale power generation."
-    },
-    {
-      title: "Pumps",
-      icon: Droplets,
-      desc: "Dynamic & volumetric pumps and pump units (pumps with electric motors) for different types of liquids used in heavy industries, including specialized slurry pumps."
-    },
-    {
-      title: "Compressors & Exhausters",
-      icon: Wind,
-      desc: "Centrifugal, reciprocal and screw type air and gas compressors, exhausters, superchargers, turbochargers, fans and blowers for gas compressor stations and power generation."
-    },
-    {
-      title: "Valves",
-      icon: Gauge,
-      desc: "Gate valves, stop valves, return valves, safety valves, throttle-control valves, impulse valves and hot blast stove valves for power plants, steel plants and nuclear power stations."
-    },
-    {
-      title: "Boilers & Heat Exchangers",
-      icon: Thermometer,
-      desc: "Steam boilers, hot and warm water boilers, air and gas coolers, heat exchangers, gas cylinders, tanks and other auxiliary mechanical equipment."
-    },
-    {
-      title: "Presses, Forging & Casting",
-      icon: Settings2,
-      desc: "Mechanical and hydraulic presses, manipulators, forming machines and other forging equipment. First-quality mill rolls, castings, forgings, ingots and finished products."
-    },
-    {
-      title: "Gearboxes, Reducers & Bearings",
-      icon: Cog,
-      desc: "Various types of gearboxes and reducers applicable in main and auxiliary equipment. Sleeve bearings and roll bearings of different modifications and purpose."
-    },
-    {
-      title: "Electrolysers & Filters",
-      icon: CircuitBoard,
-      desc: "Different types of electrolysers, filters and other equipment used to produce hydrogen, oxygen, oxygen/hydrogen mix and oxyhydrogen gas by means of electrolysis of water."
-    },
-    {
-      title: "Machine Tools (CNC)",
-      icon: Wrench,
-      desc: "High quality machine tools including CNC: lathes, vertical and horizontal drilling, boring, milling, turning, cutting and grinding machines, centers and other equipment."
-    }
-  ];
-
-  const electricalCategories = [
-    {
-      title: "Low Voltage Control Gear",
-      icon: Cpu,
-      desc: "Contactors and switches with rated voltage up to 1000 V AC and up to 1500 V DC for industrial control applications."
-    },
-    {
-      title: "High Voltage Gear & Equipment",
-      icon: Zap,
-      desc: "Oil power transformers for voltage 6–110 kV, smoothly regulated arcing oil reactors, and high voltage circuit-breakers."
-    },
-    {
-      title: "Electric Machines & Drives",
-      icon: Settings2,
-      desc: "Asynchronous electric motors (100–32,000 kW, 380V–6(11) kV), synchronous motors and generators, excitation systems, and frequency converters."
-    }
-  ];
-
-  const generalEquipment = [
-    "Centrifugal Pumps (including slurry pumps)",
-    "Electric Motors (HT/LT, DC/AC)",
-    "High-Pressure Valves",
-    "Steam Boilers, Turbines & Equipment",
-    "Compressors, Exhauster & Blowers",
-    "Circuit Breakers, Relays, Thyristors, Contactors",
-    "Rolling Mill Equipment",
-    "Machine Tools & Presses (Forging, Hydraulic)"
-  ];
-
   return (
     <PageTransition>
       <PageHeader title="Products & Sourcing" subtitle="Precision Engineering Supply" />
@@ -122,6 +230,12 @@ export default function Products() {
             </div>
           </FadeIn>
 
+          {/* Carousel */}
+          <FadeIn delay={0.1}>
+            <MechanicalCarousel />
+          </FadeIn>
+
+          {/* Cards grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {mechanicalCategories.map((cat, i) => (
               <FadeIn key={i} delay={i * 0.07}>
