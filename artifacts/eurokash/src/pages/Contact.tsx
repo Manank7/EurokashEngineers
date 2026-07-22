@@ -54,7 +54,7 @@ export default function Contact() {
                     <div>
                       <h4 className="font-mono text-sm tracking-widest text-primary uppercase mb-1">Company</h4>
                       <p className="font-bold text-lg">EUROKASH ENGINEERS & CONSULTANTS</p>
-                      <p className="text-sm text-foreground/60 mt-1">Established 1989 · ISO 9001:2015 Certified</p>
+                      <p className="text-sm text-foreground/60 mt-1">Established 1989</p>
                     </div>
                   </div>
                   

@@ -89,6 +89,7 @@ const carouselSlides = [
   { src: "/images/compressor-1-centrifugal-station.jpg.jpeg", label: "Compressors & Exhausters" },
   { src: "/images/compressor-2-reciprocating.jpg.jpeg", label: "" },
   { src: "/images/compressor-4-gas-station.jpg.jpeg", label: "" },
+  { src: "/images/compressor-and-exhauster.jpeg", label: "" },
   { src: "/images/07-valves-a.jpg.jpeg", label: "Valves" },
   { src: "/images/08-valves-b.jpg.jpeg", label: "" },
   { src: "/images/09-boilers-heat-exchangers-a.jpg.jpeg", label: "Boilers & Heat Exchangers" },
@@ -100,7 +101,7 @@ const carouselSlides = [
   { src: "/images/15-machine-tools-a.jpg.jpeg", label: "Machine Tools (CNC)" },
   { src: "/images/16-machine-tools-b.jpg.jpeg", label: "" },
   { src: "/images/20-machine-tools-c.jpg.jpeg", label: "" },
-  { src: "/images/mech-electrolysers.png", label: "Electrolysers & Filters" },
+  { src: "/images/electrolysers-and-filters.jpeg", label: "Electrolysers & Filters" },
 ];
 
 function MechanicalCarousel() {
